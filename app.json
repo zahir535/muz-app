@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "muz-app",
-    "slug": "muz-app",
+    "slug": "muzapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -36,6 +36,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "511cd4cb-eca5-497c-88b0-1abc04655e8d"
+      }
+    },
+    "owner": "zahir111"
   }
 }
