@@ -1,7 +1,22 @@
-import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import React, { useState } from "react";
+import { Text, View, StyleSheet, ScrollView } from "react-native";
+import { ClassSkeleton, HomeSkeleton } from "../components";
 
 export default function Index() {
+  const [isFetching, setIsFetching] = useState(true);
+
+  if (isFetching) {
+    return (
+      <>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <HomeSkeleton />
+          <View style={{ marginBottom: 24 }} />
+          <ClassSkeleton />
+        </ScrollView>
+      </>
+    );
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Home screen asd</Text>
