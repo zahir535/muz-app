@@ -50,9 +50,15 @@ Join our community of developers creating universal apps.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
 
 // muz-app already installed in Pixel_6_API_33 simulator
-// run this command "android:build:local" ton run a new build in simulator
+// command "android:build:local" will create aab file
 
 // android:build:local - create aab
 
 // expo guides
 // [local app development](https://docs.expo.dev/guides/local-app-development/)
+
+// expo development build
+npx expo run:android - will expose android native directory
+npx expo run:ios - will expose ios native directory
+
+npx stallion publish-bundle --upload-path=muz/muzapp/2025-ota-releases --platform=android --release-note="OTA 1st step testing"
