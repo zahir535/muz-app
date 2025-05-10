@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import SkeletonPlaceholder from "react-native-skeleton-placeholder";
 
-export const HomeSkeleton = () => {
+const HomeSkeleton = () => {
   return (
     <View style={{ padding: 24 }}>
       <SkeletonPlaceholder>
@@ -18,3 +18,5 @@ export const HomeSkeleton = () => {
     </View>
   );
 };
+
+export default HomeSkeleton;

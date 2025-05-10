@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import SkeletonPlaceholder from "react-native-skeleton-placeholder";
 
-export const ProfileSkeleton = () => {
+const ProfileSkeleton = () => {
   return (
     <View style={{ padding: 24, paddingTop: 120 }}>
       <SkeletonPlaceholder>
@@ -32,3 +32,5 @@ export const ProfileSkeleton = () => {
     </View>
   );
 };
+
+export default ProfileSkeleton;

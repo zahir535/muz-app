@@ -1,9 +1,28 @@
-import React, { useState } from "react";
-import { Text, View, StyleSheet, ScrollView } from "react-native";
-import { ClassSkeleton, HomeSkeleton } from "../components";
+import React, { useEffect, useState } from "react";
+import {
+  View,
+  StyleSheet,
+  ScrollView,
+  SafeAreaView,
+  FlatList,
+} from "react-native";
+import ClassSection from "../components/sections/class-section";
+import NewsSection from "../components/sections/news-section";
+import ClassSkeleton from "../components/skeletons/class-skeleton";
+import HomeSkeleton from "../components/skeletons/home-skeleton";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { Separator } from "../components/separator/separator";
 
 export default function Index() {
   const [isFetching, setIsFetching] = useState(true);
+
+  useEffect(() => {
+    // todo - use lazy loading
+    // tanstack query
+    setTimeout(() => {
+      setIsFetching(false);
+    }, 2000);
+  }, []);
 
   if (isFetching) {
     return (
@@ -18,25 +37,31 @@ export default function Index() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Home screen asd</Text>
-    </View>
+    <>
+      <FlatList
+        data={[]}
+        renderItem={() => {
+          return <></>;
+        }}
+        ListHeaderComponent={
+          <>
+            <NewsSection />
+            <Separator />
+          </>
+        }
+        ListFooterComponent={<ClassSection />}
+      />
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#25292e",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  text: {
-    color: "#fff",
-  },
-  button: {
-    fontSize: 20,
-    textDecorationLine: "underline",
-    color: "#fff",
+    // backgroundColor: "#25292e",
+    // alignItems: "center",
+    // justifyContent: "center",
+    // padding: 24,
+    // backgroundColor: "lightgreen",
   },
 });

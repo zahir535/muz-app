@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Text, View, StyleSheet } from "react-native";
-import { ProfileSkeleton } from "../components";
+import ProfileSkeleton from "../components/skeletons/profile-skeleton";
 
 export default function ProfileScreen() {
   const [isFetching, setIsFetching] = useState(true);
+
+  useEffect(() => {
+    // todo - use lazy loading
+    // tanstack query
+    setTimeout(() => {
+      setIsFetching(false);
+    }, 2000);
+  }, []);
 
   if (isFetching) {
     return (
@@ -15,7 +23,7 @@ export default function ProfileScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>About screen</Text>
+      <Text style={styles.text}>Profile screen</Text>
     </View>
   );
 }
