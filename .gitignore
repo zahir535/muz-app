@@ -36,3 +36,11 @@ yarn-error.*
 *.tsbuildinfo
 
 app-example
+
+
+
+# exclude android & ios directory for now
+# active development by using command 'npx expo run:android', but don't want to actually eject from expo for now
+# can always directly delete these directories & run command again
+android
+ios
