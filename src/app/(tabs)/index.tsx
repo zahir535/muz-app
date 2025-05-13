@@ -6,12 +6,12 @@ import {
   SafeAreaView,
   FlatList,
 } from "react-native";
-import ClassSection from "../components/sections/class-section";
-import NewsSection from "../components/sections/news-section";
-import ClassSkeleton from "../components/skeletons/class-skeleton";
-import HomeSkeleton from "../components/skeletons/home-skeleton";
+import ClassSection from "../../components/sections/class-section";
+import NewsSection from "../../components/sections/news-section";
+import ClassSkeleton from "../../components/skeletons/class-skeleton";
+import HomeSkeleton from "../../components/skeletons/home-skeleton";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { Separator } from "../components/separator/separator";
+import Separator from "@/src/components/separator/separator";
 
 export default function Index() {
   const [isFetching, setIsFetching] = useState(true);
