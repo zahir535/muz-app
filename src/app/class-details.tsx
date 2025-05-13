@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useLocalSearchParams, useNavigation } from "expo-router";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import {
   Text,
   View,
@@ -17,6 +18,8 @@ interface ClassTests {
 }
 
 export default function ClassDetailsScreen() {
+  const navigation = useNavigation();
+  const { id, title } = useLocalSearchParams();
   const dummyTests: ClassTests[] = [
     {
       id: "id001",
@@ -51,6 +54,12 @@ export default function ClassDetailsScreen() {
       availableResources: [],
     },
   ];
+
+  useLayoutEffect(() => {
+    if (navigation && title) {
+      navigation.setOptions({ title: title });
+    }
+  });
 
   return (
     <View style={styles.container}>

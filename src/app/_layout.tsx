@@ -14,8 +14,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 const Layout = () => {
   return (
     <Stack>
+      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen name="class-details" options={{ title: "Class 2025" }} />
+      <Stack.Screen name="class-details" />
       <Stack.Screen name="+not-found" />
     </Stack>
   );

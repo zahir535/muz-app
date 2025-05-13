@@ -49,7 +49,12 @@ const ClassSection = () => {
         renderItem={({ item }) => (
           <ClassCard
             title={item.classTitle}
-            onPress={() => router.navigate("/class-details")}
+            onPress={() => {
+              router.push({
+                pathname: "/class-details",
+                params: { id: item.id, title: item.classTitle },
+              });
+            }}
           />
         )}
       />
