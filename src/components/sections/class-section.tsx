@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Text, View, StyleSheet, ScrollView, FlatList } from "react-native";
-import ClassCard from "../cards/class-card";
 import { useNavigation, useRouter } from "expo-router";
+import ClassCard from "../cards/class-card";
 
 const ClassSection = () => {
   const router = useRouter();

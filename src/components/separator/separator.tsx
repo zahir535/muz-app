@@ -2,7 +2,7 @@ import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import { View } from "react-native";
 
-export const Separator = () => {
+const Separator = () => {
   return (
     <View
       style={{
@@ -42,3 +42,5 @@ export const Separator = () => {
     </View>
   );
 };
+
+export default Separator;
