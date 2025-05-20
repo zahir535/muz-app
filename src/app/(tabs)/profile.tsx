@@ -4,10 +4,12 @@ import ProfileSkeleton from "../../components/skeletons/profile-skeleton";
 import { useDispatch, useSelector } from "react-redux";
 import { updateUserName } from "@/src/services/store/slices/userSlice";
 import { RootState } from "@/src/services/store/store";
+import { useAuthenticator } from "@aws-amplify/ui-react-native";
 
 export default function ProfileScreen() {
   const name = useSelector((state: RootState) => state.user.name);
   const dispatch = useDispatch();
+  const { signOut } = useAuthenticator();
 
   const [isFetching, setIsFetching] = useState(true);
 
@@ -36,6 +38,10 @@ export default function ProfileScreen() {
       <Text style={styles.text}>Profile screen: name</Text>
       <Pressable onPress={handleUpdateName}>
         <Text style={styles.text}>Update name: {name}</Text>
+      </Pressable>
+
+      <Pressable onPress={signOut}>
+        <Text style={styles.text}>Sign Out</Text>
       </Pressable>
     </View>
   );

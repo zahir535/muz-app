@@ -5,22 +5,11 @@ import "react-native-reanimated";
 import { Provider } from "react-redux";
 import store from "../services/store/store";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Amplify } from "aws-amplify";
+import { Authenticator, useAuthenticator } from "@aws-amplify/ui-react-native";
+import outputs from "../../amplify_outputs.json";
 
-/**
- * Contains all screens & stacks of the app
- *
- * @returns Navigation Stack UI
- */
-const Layout = () => {
-  return (
-    <Stack>
-      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen name="class-details" />
-      <Stack.Screen name="+not-found" />
-    </Stack>
-  );
-};
+Amplify.configure(outputs);
 
 /**
  * Contains all the wrappers of package's provider
@@ -36,12 +25,16 @@ export default function RootLayout() {
 
   return (
     <>
-      <Provider store={store}>
-        <QueryClientProvider client={queryClient}>
-          <StatusBar style="light" />
-          <Layout />
-        </QueryClientProvider>
-      </Provider>
+      <Authenticator.Provider>
+        <Authenticator>
+          <Provider store={store}>
+            <QueryClientProvider client={queryClient}>
+              <StatusBar style="light" />
+              <Stack screenOptions={{ headerShown: false }} />
+            </QueryClientProvider>
+          </Provider>
+        </Authenticator>
+      </Authenticator.Provider>
     </>
   );
 }
