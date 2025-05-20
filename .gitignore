@@ -44,3 +44,8 @@ app-example
 # can always directly delete these directories & run command again
 android
 ios
+
+# amplify
+.amplify
+amplify_outputs*
+amplifyconfiguration*
