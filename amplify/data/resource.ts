@@ -40,6 +40,7 @@ export const data = defineData({
   authorizationModes: {
     defaultAuthorizationMode: "identityPool",
   },
+  logging: true,
 });
 
 /*== STEP 2 ===============================================================
