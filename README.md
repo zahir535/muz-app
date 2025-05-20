@@ -62,3 +62,14 @@ npx expo run:android - will expose android native directory
 npx expo run:ios - will expose ios native directory
 
 npx stallion publish-bundle --upload-path=muz/muzapp/2025-ota-releases --platform=android --release-note="OTA 1st step testing"
+
+Amplify Sandbox
+
+Identifier: zahir
+Stack: amplify-muzapp-zahir-sandbox-674c45c130
+Region: ap-southeast-1
+
+To specify a different sandbox identifier, use --identifier
+https://ywfhjwoonvhkvj67ib7ud34cay.appsync-api.ap-southeast-1.amazonaws.com/graphql
+
+WARNING: Schema is using an @auth directive with deprecated provider 'iam'. Replace 'iam' provider with 'identityPool' provider.

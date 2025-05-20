@@ -1,4 +1,4 @@
-import { type ClientSchema, a, defineData } from '@aws-amplify/backend';
+import { type ClientSchema, a, defineData } from "@aws-amplify/backend";
 
 /*== STEP 1 ===============================================================
 The section below creates a Todo database table with a "content" field. Try
@@ -7,11 +7,31 @@ specifies that any unauthenticated user can "create", "read", "update",
 and "delete" any "Todo" records.
 =========================================================================*/
 const schema = a.schema({
-  Todo: a
-    .model({
-      content: a.string(),
-    })
+  News: a
+    .model({ id: a.string(), date: a.integer(), title: a.string() })
     .authorization((allow) => [allow.guest()]),
+  StudentClass: a
+    .model({
+      classIdRef: a.string(), // ref to id of Class
+      joinedDate: a.integer(),
+    })
+    .authorization((allow) => [allow.authenticated()]),
+  StudentExams: a
+    .model({
+      classIdRef: a.string(), // ref to id of Class
+      examDate: a.integer(),
+      examResult: a.string(),
+      resources: a.string(), // exam question link
+    })
+    .authorization((allow) => [allow.authenticated()]),
+  Class: a
+    .model({
+      id: a.string(),
+      classTitle: a.string(),
+      classTeacher: a.string(),
+      s3BucketPath: a.string(),
+    })
+    .authorization((allow) => [allow.authenticated()]),
 });
 
 export type Schema = ClientSchema<typeof schema>;
@@ -19,7 +39,7 @@ export type Schema = ClientSchema<typeof schema>;
 export const data = defineData({
   schema,
   authorizationModes: {
-    defaultAuthorizationMode: 'identityPool',
+    defaultAuthorizationMode: "identityPool",
   },
 });
 
