@@ -8,7 +8,7 @@ and "delete" any "Todo" records.
 =========================================================================*/
 const schema = a.schema({
   News: a
-    .model({ id: a.string(), date: a.integer(), title: a.string() })
+    .model({ date: a.integer(), title: a.string() })
     .authorization((allow) => [allow.guest()]),
   StudentClass: a
     .model({
@@ -26,7 +26,6 @@ const schema = a.schema({
     .authorization((allow) => [allow.authenticated()]),
   Class: a
     .model({
-      id: a.string(),
       classTitle: a.string(),
       classTeacher: a.string(),
       s3BucketPath: a.string(),
