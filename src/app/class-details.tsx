@@ -23,33 +23,33 @@ export default function ClassDetailsScreen() {
   const dummyTests: ClassTests[] = [
     {
       id: "id001",
-      testName: "",
+      testName: "Math Mid Term test",
       date: 1744727190000,
-      marks: 40,
+      marks: 60,
       fullMarks: 100,
       availableResources: [],
     },
     {
       id: "id002",
-      testName: "",
+      testName: "Science Mid Term test",
       date: 1744727190000,
-      marks: 40,
+      marks: 58,
       fullMarks: 100,
       availableResources: [],
     },
     {
       id: "id003",
-      testName: "",
+      testName: "Math Final test",
       date: 1744727190000,
-      marks: 40,
+      marks: 88,
       fullMarks: 100,
       availableResources: [],
     },
     {
       id: "id004",
-      testName: "",
+      testName: "Math 2 Final test",
       date: 1744727190000,
-      marks: 40,
+      marks: 60,
       fullMarks: 100,
       availableResources: [],
     },
@@ -63,8 +63,9 @@ export default function ClassDetailsScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Class Name: {"className"}</Text>
-      <Text style={styles.text}>Teacher Name: {"teacherName"}</Text>
+      <View style={{ height: 48 }} />
+      <Text style={styles.text}>Class Name: {"<class-name>"}</Text>
+      <Text style={styles.text}>Teacher Name: {"<teacher-name>"}</Text>
 
       <View style={{ height: 24 }} />
 
@@ -78,12 +79,23 @@ export default function ClassDetailsScreen() {
         renderItem={({ item }) => (
           <TouchableOpacity
             style={{
-              height: 48,
+              // height: 48,
               width: "100%",
               backgroundColor: "white",
               borderRadius: 8,
+              justifyContent: "center",
+              paddingHorizontal: 24,
+              paddingVertical: 8,
             }}
-          />
+          >
+            <Text>
+              {item.testName} : {item.marks}/{item.fullMarks}%
+            </Text>
+
+            <View style={{ height: 12 }} />
+
+            <Text>Test date: {new Date(item.date).toUTCString()}</Text>
+          </TouchableOpacity>
         )}
       />
     </View>

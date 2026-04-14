@@ -1,9 +1,11 @@
 import React from "react";
-import { Tabs } from "expo-router";
+import { Tabs, useRouter } from "expo-router";
 
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function TabLayout() {
+  const router = useRouter();
+
   return (
     <Tabs
       screenOptions={{
@@ -30,6 +32,26 @@ export default function TabLayout() {
             />
           ),
         }}
+      />
+      <Tabs.Screen
+        name="scan"
+        options={{
+          title: "Scan",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "camera" : "camera-outline"}
+              color={color}
+              size={24}
+            />
+          ),
+        }}
+        listeners={() => ({
+          tabPress: (e) => {
+            e.preventDefault(); // Prevent default tab switch
+            // Navigate to the screen in the parent stack
+            router.navigate("/(qr)");
+          },
+        })}
       />
       <Tabs.Screen
         name="profile"
