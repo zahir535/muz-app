@@ -5,8 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateUserName } from "@/src/services/store/slices/userSlice";
 import { RootState } from "@/src/services/store/store";
 import { useAuthenticator } from "@aws-amplify/ui-react-native";
+import { useRouter } from "expo-router";
 
 export default function ProfileScreen() {
+  const router = useRouter();
+
   const name = useSelector((state: RootState) => state.user.name);
   const dispatch = useDispatch();
   const { signOut } = useAuthenticator();
@@ -15,6 +18,10 @@ export default function ProfileScreen() {
 
   const handleUpdateName = () => {
     dispatch(updateUserName("New name"));
+  };
+
+  const handleRunMockProcess = () => {
+    router.push("/(register)");
   };
 
   useEffect(() => {
@@ -36,10 +43,17 @@ export default function ProfileScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Profile screen: name</Text>
+      <View style={{ height: 24 }} />
       <Pressable onPress={handleUpdateName}>
         <Text style={styles.text}>Update name: {name}</Text>
       </Pressable>
 
+      <View style={{ height: 48 }} />
+      <Pressable onPress={handleRunMockProcess}>
+        <Text style={styles.text}>Mock process</Text>
+      </Pressable>
+
+      <View style={{ height: 48 }} />
       <Pressable onPress={signOut}>
         <Text style={styles.text}>Sign Out</Text>
       </Pressable>
