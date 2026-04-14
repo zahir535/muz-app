@@ -10218,6 +10218,25 @@ expo-haptics@~14.0.1:
   resolved "https://registry.npmjs.org/expo-haptics/-/expo-haptics-14.0.1.tgz"
   integrity sha512-V81FZ7xRUfqM6uSI6FA1KnZ+QpEKnISqafob/xEfcx1ymwhm4V3snuLWWFjmAz+XaZQTqlYa8z3QbqEXz7G63w==
 
+expo-image-loader@~55.0.0:
+  version "55.0.0"
+  resolved "https://registry.yarnpkg.com/expo-image-loader/-/expo-image-loader-55.0.0.tgz#56ae6631a0f43191432296a1f7f1e9737e653cfe"
+  integrity sha512-NOjp56wDrfuA5aiNAybBIjqIn1IxKeGJ8CECWZncQ/GzjZfyTYAHTCyeApYkdKkMBLHINzI4BbTGSlbCa0fXXQ==
+
+expo-image-picker@^55.0.18:
+  version "55.0.18"
+  resolved "https://registry.yarnpkg.com/expo-image-picker/-/expo-image-picker-55.0.18.tgz#a0554e9c7ba5f090256788f7c9c686dc6a88ef91"
+  integrity sha512-lGpPGRu+7mE8qN0ma2boRsCmfOGbdHZ2bXTpWVeWly0JCZdogGlTrYFnhTqgS8+lmiRb/UCOs7iTm2P5Rra6kw==
+  dependencies:
+    expo-image-loader "~55.0.0"
+
+expo-image@^55.0.8:
+  version "55.0.8"
+  resolved "https://registry.yarnpkg.com/expo-image/-/expo-image-55.0.8.tgz#0b23054041508e70948bd4ab5d3f6bdd71c53989"
+  integrity sha512-fNdvdYVcGn3g1x6o5AXHKzk4xX8U6rg2W9vFdE1pQO80kWCNReh003ypqSrGy4dD+zA8FtZjrNF3oMDGnPpIGQ==
+  dependencies:
+    sf-symbols-typescript "^2.2.0"
+
 expo-json-utils@~0.14.0:
   version "0.14.0"
   resolved "https://registry.npmjs.org/expo-json-utils/-/expo-json-utils-0.14.0.tgz"
@@ -14821,6 +14840,11 @@ sf-symbols-typescript@^2.0.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/sf-symbols-typescript/-/sf-symbols-typescript-2.1.0.tgz"
   integrity sha512-ezT7gu/SHTPIOEEoG6TF+O0m5eewl0ZDAO4AtdBi5HjsrUI6JdCG17+Q8+aKp0heM06wZKApRCn5olNbs0Wb/A==
+
+sf-symbols-typescript@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/sf-symbols-typescript/-/sf-symbols-typescript-2.2.0.tgz#926d6e0715e3d8784cadf7658431e36581254208"
+  integrity sha512-TPbeg0b7ylrswdGCji8FRGFAKuqbpQlLbL8SOle3j1iHSs5Ob5mhvMAxWN2UItOjgALAB5Zp3fmMfj8mbWvXKw==
 
 shallow-clone@^3.0.0:
   version "3.0.1"
