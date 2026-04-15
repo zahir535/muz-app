@@ -34,7 +34,7 @@ export default function ConfirmationScreen() {
         }}
       >
         <Pressable
-          onPress={() => router.dismissTo("/(dashboard)")}
+          onPress={() => router.dismissTo("/(tabs)")}
           style={{
             justifyContent: "center",
             alignItems: "center",
@@ -50,7 +50,7 @@ export default function ConfirmationScreen() {
         <View style={{ width: 24 }} />
 
         <Pressable
-          onPress={() => router.dismissTo("/(dashboard)")}
+          onPress={() => router.dismissTo("/(tabs)")}
           style={{
             justifyContent: "center",
             alignItems: "center",
